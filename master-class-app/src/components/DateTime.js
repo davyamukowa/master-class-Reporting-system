@@ -1,6 +1,21 @@
-import  React, { useState , useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import {makeStyles} from '@material-ui/core/styles';
 
-export const DateTime = () => {
+const useStyles = makeStyles(theme => ({
+
+    dateSpace: {
+        // padding: theme.spacing(1)
+        // spacing: {8},
+
+         margin: "40px",
+        padding: "1px"
+
+    }
+    }));
+
+ const DateTime = () => {
+
+  const classes = useStyles();
 
     var [date,setDate] = useState(new Date());
     
@@ -14,7 +29,7 @@ export const DateTime = () => {
 
     return(
         <div>
-            <center>
+            <center className={classes.dateSpace}>
             <h2> Time : {date.toLocaleTimeString()}</h2>
             <h2> Date : {date.toLocaleDateString()}</h2>
 </center>
